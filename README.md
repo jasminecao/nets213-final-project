@@ -52,5 +52,15 @@ With regard to difficulty, we believe this component is a **4 out of 4**.
 
 ----
 
+## Raw Data
+A survey was posted on the NETS213 Piazza to collect common university student stressors. The 10 most common responses were cleaned and formatted into the file `data/stressors.csv`. There are two columns: `stressor_1` and `stressor_2` which reflect the two problems displayed on one HIT (each task will require workers to provide advice for two different problems). 100 total responses (10 per stressor) were collected from workers and are in the file `data/stressor_responses.csv`.
+
 ## Testing and Data
-In order to check answers validated in Step 4, we will use an **EM algorithm** to label each stressor-response pair. Sample inputs to the EM algorithm can be found in `/sample data`. Our sample datasets are `sample_stressor1_response_qualcheck` and `sample_stressor2_response_qualcheck`. This is a cleaned-up version of the CSV's we expect to extract from the HITs. They have columns: `'workerid'`, `'response'`, `'label'`. The final labeled pairs we expect to output from the EM algorithm will have two columns: `'response'` and `'label'`. The labels gathered from workers will either by a `yes [1]` or `no [0]`. We have a total of ten different stressors. Each stressor will have it's own *independent input and output CSV* containing their respective responses and worker labels. In short, we will run the EM algorithm 10 times, one per stressor.
+In order to check answers validated in Step 4, we will use an **EM algorithm** to label each stressor-response pair. Sample inputs to the EM algorithm can be found in `data/sample_data`. Our sample datasets are `sample_stressor1_response_qualcheck` and `sample_stressor2_response_qualcheck`. This is a cleaned-up version of the CSV's we expect to extract from the HITs. They have columns: `'workerid'`, `'response'`, `'label'`. The final labeled pairs we expect to output from the EM algorithm will have two columns: `'response'` and `'label'`. The labels gathered from workers will either by a `yes [1]` or `no [0]`. We have a total of ten different stressors. Each stressor will have it's own *independent input and output CSV* containing their respective responses and worker labels. In short, we will run the EM algorithm 10 times, one per stressor.
+
+## Directory
+- `docs/flow_chart.png`: flow diagram of major system components
+- `docs/mockups`: mockups of user-facing interfaces
+- `data/stressors.csv`: student stressors collected from survey
+- `data/sample_data`: sample dataset
+- `layouts`: html HIT layouts
