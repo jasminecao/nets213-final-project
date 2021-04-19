@@ -9,6 +9,7 @@ def main():
     for i, row in df1.iterrows():
       tuple_list.append((row['workerid'], row['response'], row['label']))
 
+    # outputted EM algo results
     em_list = em_vote(tuple_list, 1000)
 
     # outputs CSV's of responses
