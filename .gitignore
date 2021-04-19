@@ -1,0 +1,9 @@
+# IDE files
+.vscode/
+
+# Python files
+__pycache__/
+*.pyc
+
+# Mac
+.DS_Store
