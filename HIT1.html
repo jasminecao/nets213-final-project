@@ -1,0 +1,111 @@
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+  <crowd-instructions link-text="More Information" link-type="button">
+    <short-summary>
+      <p>
+        STRED is a project whose goal is to provide high quality tips,
+        resources, and words of encouragement that will help reduce stress and
+        anxiety caused by problems university students encounter every day. Your
+        responses will be shown to students to alleviate their stress and
+        encourage them.
+      </p>
+    </short-summary>
+    <detailed-instructions>
+      <p>
+        In each space, write down 3-4 sentences as a response to the stressor
+        displayed below. Responses should include both problem-related advice
+        (stress-relief tips, resources, etc) and words of encouragement.
+      </p>
+    </detailed-instructions>
+    <positive-example>
+      <p>
+        If your friend or family said this, how would you respond (3-4
+        sentences)?
+      </p>
+      <p>
+        <b>Problem:</b> I am concerned about finding an affordable and safe
+        apartment to live in next year.
+      </p>
+      <p>
+        <b>Example Answer:</b> Finding a good apartment takes time, so you don’t
+        need to worry about it. Check crime rates in the area, ask for
+        recommendations from your friends, and check websites like airbnb and
+        apartments.com for good prices. Also don’t forget to ask your university
+        administrators, who might also live nearby and in safe apartments. You
+        got this!
+      </p>
+    </positive-example>
+    <negative-example>
+      <p>
+        If your friend or family said this, how would you respond (3-4
+        sentences)?
+      </p>
+      <p>
+        <b>Problem:</b> I am concerned about finding an affordable and safe
+        apartment to live in next year.
+      </p>
+      <p><b>Example Answer:</b> Don't worry, you got this! You'll be fine!</p>
+      <p>
+        (The example answer above is NOT good because it lacks specificity and
+        provides no advice relating to the problem.)
+      </p>
+    </negative-example>
+  </crowd-instructions>
+
+  <h1>Provide Stress Relief</h1>
+  <p>
+    <b>Instructions:</b> In each space, write down 3-4 sentences as a response
+    to the stressor displayed below. Responses should include both
+    problem-related advice (stress-relief tips, resources, etc) and words of
+    encouragement.
+  </p>
+  <div style="border: 1px solid gray;">
+  <p>
+    <b>Example Problem:</b> I am concerned about finding an affordable and safe
+    apartment to live in next year.
+  </p>
+  <p>
+    <b>Example Answer:</b> Finding a good apartment takes time, so you don’t
+    need to worry about it. Check crime rates in the area, ask for
+    recommendations from your friends, and check websites like airbnb and
+    apartments.com for good prices. Also don’t forget to ask your university
+    administrators, who might also live nearby and in safe apartments. You got
+    this!
+  </p>
+</div>
+
+  <h4>Stressor 1</h4>
+  <div>
+    <p>
+      If your friend or family said this, how would you respond (3-4 sentences)?
+    </p>
+    <p><b>Problem:</b> ${stressor_1}</p>
+    <crowd-text-area
+      name="response_1"
+      placeholder="Write your answer here..."
+      rows="2"
+      required
+    ></crowd-text-area>
+  </div>
+
+  <br>
+  <h4>Stressor 2</h4>
+  <div>
+    <p>
+      If your friend or family said this, how would you respond (3-4 sentences)?
+    </p>
+    <p><b>Problem:</b> ${stressor_2}</p>
+    <crowd-text-area
+      name="response_2"
+      placeholder="Write your answer here..."
+      rows="2"
+      required
+    ></crowd-text-area>
+  </div>
+</crowd-form>
