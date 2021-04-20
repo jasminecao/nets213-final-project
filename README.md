@@ -62,6 +62,8 @@ In order to check answers validated in Step 4, we will use an **EM algorithm** t
 
 Our **EM Algorithm** reads a CSV of responses, and outputs another CSV of results. The columns of each I/O dataset is outlined above. To ensure convergence, our algorithm goes through one-thousand interations. For each iteration, we monitor `worker confusion matrices` and `weighted response labels` and update these two after each iteration of the algorithm. The first step of the algorithm is to take a weighted majority vote based on worker response and the confusion matrices. We then update the finalized labels for each response, and then adjust the confusion matrices based on the weighted majority. The algorithm goes through one-thousand loops of these iterations, and then finally returns the outputted CSV file.
 
+## Data Aggregation Of Ratings of Responses
+To choose the best responses that we filtered in the previous step, we asked multiple Turkers to rate them on the scale from 1 to 10. For each of the responses, we took the average of the Workers' responses and chose the highest ranked responsses based on the calculated average.
 ----
 
 ## Directory
@@ -69,5 +71,7 @@ Our **EM Algorithm** reads a CSV of responses, and outputs another CSV of result
 - `docs/mockups`: mockups of user-facing interfaces
 - `data/stressors.csv`: student stressors collected from survey
 - `data/quality_control`: sample quality control I/O datasets
+- `data/Fake Data 2 - Sheet1.csv` : sample data for rating the responses
 - `layouts`: HTML layouts for MTurk HIT's
 - `src/quality_control`: EM algorithm script
+- `src/average_ratings.py` : script for calculating average among the responses and choosing the highest one
