@@ -73,6 +73,7 @@ To choose the best responses that we filtered in the previous step, we asked mul
 - `docs/flow_chart.png`: flow diagram of major system components
 - `docs/mockups`: mockups of user-facing interfaces
 - `data/stressors.csv`: student stressors collected from survey
+- `data/stressor_responses1.csv`: responses to stressors collected through MTurk
 - `data/quality_control`: sample quality control I/O datasets
 - `data/Fake Data 2 - Sheet1.csv` : sample data for rating the responses
 - `data/average_ratings.csv` : csv file we got after running averaging script
