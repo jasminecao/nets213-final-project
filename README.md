@@ -65,7 +65,7 @@ Our **EM Algorithm** reads a CSV of responses, and outputs another CSV of result
 ----
 
 ## Data Aggregation Of Ratings of Responses
-To choose the best responses that we filtered in the previous step, we asked multiple Turkers to rate them on the scale from 1 to 10. For each of the responses, we took the average of the Workers' responses and chose the highest ranked responsses based on the calculated average.
+To choose the best responses that we filtered in the previous step, we asked multiple Turkers to rate them on the scale from 1 to 10. For each of the responses, we took the average of the Workers' responses.
 
 ----
 
