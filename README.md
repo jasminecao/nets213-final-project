@@ -53,12 +53,12 @@ With regard to difficulty, we believe this component is a **4 out of 4**.
 ----
 
 ## Raw Data
-A survey was posted on the NETS213 Piazza to collect common university student stressors. The 10 most common responses were cleaned and formatted into the file `data/stressors.csv`. There are two columns: `stressor_1` and `stressor_2` which reflect the two problems displayed on one HIT (each task will require workers to provide advice for two different problems). 100 total responses (10 per stressor) were collected from workers and are in the file `data/stressor_responses.csv`.
+A survey was posted on the NETS213 Piazza to collect common university student stressors. The 10 most common responses were cleaned and formatted into the file `data/stressors.csv`. There are two columns: `stressor_1` and `stressor_2` which reflect the two problems displayed on one HIT (each task will require workers to provide advice for two different problems). 100 total responses (10 per stressor) were collected from workers and are in the file `data/stressor_responses_1.csv`.
 
 ----
 
 ## Quality Control
-In order to check answers validated in Step 4, we will use an **EM algorithm** to label each stressor-response pair. Sample inputs to the EM algorithm can be found in `data/sample_data`. Our sample datasets are `sample_stressor1_response_qualcheck` and `sample_stressor2_response_qualcheck`. This is a cleaned-up version of the CSV's we expect to extract from the HITs. They have columns: `'workerid'`, `'response'`, `'label'`. The final labeled pairs we expect to output from the EM algorithm will have two columns: `'response'` and `'label'`. The labels gathered from workers will either by a `yes [1]` or `no [0]`. We have a total of ten different stressors. Each stressor will have it's own *independent input and output CSV* containing their respective responses and worker labels. In short, we will run the EM algorithm 10 times, one per stressor.
+In order to check answers validated in Step 4, we will use an **EM algorithm** to label each stressor-response pair. Sample inputs to the EM algorithm can be found in `data/quality_control`. Our sample datasets are `qc_input1` and `qc_input2`. This is a cleaned-up version of the CSV's we expect to extract from the HITs. They have columns: `'workerid'`, `'response'`, `'label'`. The final labeled pairs we expect to output from the EM algorithm will have two columns: `'response'` and `'label'`. The labels gathered from workers will either by a `yes [1]` or `no [0]`. We have a total of ten different stressors. Each stressor will have it's own *independent input and output CSV* containing their respective responses and worker labels. In short, we will run the EM algorithm 10 times, one per stressor.
 
 Our **EM Algorithm** reads a CSV of responses, and outputs another CSV of results. The columns of each I/O dataset is outlined above. To ensure convergence, our algorithm goes through one-thousand interations. For each iteration, we monitor `worker confusion matrices` and `weighted response labels` and update these two after each iteration of the algorithm. The first step of the algorithm is to take a weighted majority vote based on worker response and the confusion matrices. We then update the finalized labels for each response, and then adjust the confusion matrices based on the weighted majority. The algorithm goes through one-thousand loops of these iterations, and then finally returns the outputted CSV file.
 
@@ -75,8 +75,9 @@ To choose the best responses that we filtered in the previous step, we asked mul
 - `data/stressors.csv`: student stressors collected from survey
 - `data/stressor_responses1.csv`: responses to stressors collected through MTurk
 - `data/quality_control`: sample quality control I/O datasets
-- `data/Fake Data 2 - Sheet1.csv` : sample data for rating the responses
-- `data/average_ratings.csv` : csv file we got after running averaging script
+- `data/aggregation`: sample aggregation module
+  - `data/aggregation/Fake Data 2 - Sheet1.csv` : sample data for rating the responses
+  - `data/aggregation/average_ratings.csv` : csv file we got after running averaging script
 - `layouts`: HTML layouts for MTurk HIT's
 - `src/quality_control`: EM algorithm script
 - `src/average_ratings.py` : script for calculating average among the responses 
