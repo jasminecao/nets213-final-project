@@ -69,6 +69,11 @@ To choose the best responses that we filtered in the previous step, we asked mul
 
 ----
 
+## Explanation On How To Complete The HIT
+We prepared a video that explains how to complete the validation HIT. You can find it [here](https://vimeo.com/541439387?fbclid=IwAR36QGOtnl9Tewa9etmJl1Zt2hh_3r2jbYO3U04osz76jM-tDewDk6ZvC1I). 
+
+----
+
 ## Directory
 - `docs/flow_chart.png`: flow diagram of major system components
 - `docs/mockups`: mockups of user-facing interfaces
