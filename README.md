@@ -69,8 +69,14 @@ To choose the best responses that we filtered in the previous step, we asked mul
 
 ----
 
-## Explanation On How To Complete The HIT
-We prepared a video that explains how to complete the validation HIT. You can find it [here](https://vimeo.com/541439387?fbclid=IwAR36QGOtnl9Tewa9etmJl1Zt2hh_3r2jbYO3U04osz76jM-tDewDk6ZvC1I). 
+## Guide On How To Complete The Validation HIT
+We prepared a video that explains how to complete the validation HIT. You can find it [here](https://vimeo.com/541439387?fbclid=IwAR36QGOtnl9Tewa9etmJl1Zt2hh_3r2jbYO3U04osz76jM-tDewDk6ZvC1I). In this HIT, we ask you to answer if you would feel comfortable giving the advice provided to your family members or friends. If you think it is a good, thoughtful response that contains resources and words of encouragment you would answer Yes, otherwise you would answer No. You will be answering Yes or No to 14 advice responses that are responses to a single stressor college students experience. You can respond Yes or No to as many of them as you want. 
+
+For example, if the stressor is: "I am worried about not finding a job or internship for next summer.".
+
+One of the responses for thi stresssor could be "Finding a job or internship is very complex thing. It depends upon many external factors and mainly on the economic condition of the country. So, don't worry about the job, the important thing is to learn the skills required for getting a job. Just keep applying to the companies and take an effort on improving your skills. Definitely, you will get a nice job." if you think this is a good response you would answer yes. We think it is a good response because it consists of words of encouragment as well as advice on what the person should do. 
+
+Another response could be "don't be in a hurry, all in your time, i will help you". In this case, we think the answer should be No. This response even though it consists some sort of words of encouragement, it is not specific enough, as well as it cannot be generalized to everyone who struggles with the problem presented.
 
 ----
 
