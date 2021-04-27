@@ -92,3 +92,9 @@ Another response could be "don't be in a hurry, all in your time, i will help yo
 - `layouts`: HTML layouts for MTurk HIT's
 - `src/quality_control`: EM algorithm script
 - `src/average_ratings.py` : script for calculating average among the responses 
+
+----
+
+## Goal of Analysis
+
+We plan to analyze the best stressor-response matches with crowdsourced responses for common stressors. The goal of this analysis is the identification of adequate and helpful ways to deal with stress and respond to stressors without requiring the assitance of mental healthcare professionals- a goal more important than before due to global issues such as the COVID-19 pandemic. We aggregate the responses to each stressor and then ask MTurk workers to first differentiate between appropriate and inappropriate matches, then ask another group of workers to rank each response for a stressor. Through this process and quality control, we find the best actions the crowd believes a person should take in the face of certain problems.
