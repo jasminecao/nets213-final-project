@@ -1,0 +1,188 @@
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+    <crowd-instructions link-text="More Information" link-type="button">
+    <short-summary>
+      <p>
+        STRED is a project whose goal is to provide high quality tips,
+        resources, and words of encouragement that will help reduce stress and
+        anxiety caused by problems university students encounter every day. The
+        responses below were crowdsourced from Turkers. We need your help to validate these responses.
+      </p>
+    </short-summary>
+    <detailed-instructions>
+      <p>
+        For the given stressor, indicate whether the response is appropriate and useful. Responses should include both problem-related advice (stress-relief tips, resources, etc) and words of encouragement.
+      </p>
+    </detailed-instructions>
+    <positive-example>
+      <p>
+        Would you feel comfortable saying the following response to a friend or family?
+      </p>
+      <p>
+        <b>Problem:</b> I am concerned about finding an affordable and safe
+        apartment to live in next year.
+      </p>
+      <p>
+        <b>Response:</b> Finding a good apartment takes time, so you don’t
+        need to worry about it. Check crime rates in the area, ask for
+        recommendations from your friends, and check websites like airbnb and
+        apartments.com for good prices. Also don’t forget to ask your university
+        administrators, who might also live nearby and in safe apartments. You
+        got this!
+      </p>
+      <p><b>Your Answer:</b> Yes (The above response is encouraging and provides specific recommendations).</p>
+    </positive-example>
+    <negative-example>
+      <p>
+        Would you feel comfortable saying the following response to a friend or family?
+      </p>
+      <p>
+        <b>Problem:</b> I am concerned about finding an affordable and safe
+        apartment to live in next year.
+      </p>
+      <p><b>Response:</b> Don't worry, you got this! You'll be fine!</p>
+      <p>
+        (The example answer above is NOT good because it lacks specificity and
+        provides no advice relating to the problem.)
+      </p>
+    </negative-example>
+  </crowd-instructions>
+  <h1>Provide Stress Relief</h1>
+  <p>
+    <b>Instructions:</b> Given the following problem, indicate whether each response is appropriate and useful. <b>Would you feel comfortable saying the following response to a friend or family?</b>
+  </p>
+  <div style="border: 1px solid gray;">
+</div>
+
+  <h4 style="color: red">Problem: ${stressor}</h4>
+
+<div style="width:75%">
+  <p>Response #1: ${results1}</p>
+  <crowd-radio-group>
+        <input type="radio" id="yes1" name="results1" value="Yes" required>
+        <label for="yes1">Yes</label>
+        <input type="radio" id="no1" name="results1" value="No" required>
+        <label for="no1">No</label>
+  </crowd-radio-group>
+  
+  <p>Response #2: ${results2}</p>
+  <crowd-radio-group>
+        <input type="radio" id="yes2" name="results2" value="Yes" required>
+        <label for="yes2">Yes</label>
+        <input type="radio" id="no2" name="results2" value="No" required>
+        <label for="no2">No</label>
+  </crowd-radio-group>
+  
+  <p>Response #3: ${results3}</p>
+  <crowd-radio-group>
+        <input type="radio" id="yes3" name="results3" value="Yes" required>
+        <label for="yes3">Yes</label>
+        <input type="radio" id="no3" name="results3" value="No" required>
+        <label for="no3">No</label>
+  </crowd-radio-group>
+  
+  <p>Response #4: ${results4}</p>
+  <crowd-radio-group>
+        <input type="radio" id="yes4" name="results4" value="Yes" required>
+        <label for="yes4">Yes</label>
+        <input type="radio" id="no4" name="results4" value="No" required>
+        <label for="no4">No</label>
+  </crowd-radio-group>
+  
+  <p>Response #5: ${results5}</p>
+  <crowd-radio-group>
+        <input type="radio" id="yes5" name="results5" value="Yes" required>
+        <label for="yes5">Yes</label>
+        <input type="radio" id="no5" name="results5" value="No" required>
+        <label for="no5">No</label>
+  </crowd-radio-group>
+  
+  <p>Response #6: ${results6}</p>
+  <crowd-radio-group>
+        <input type="radio" id="yes6" name="results6" value="Yes" required>
+        <label for="yes6">Yes</label>
+        <input type="radio" id="no6" name="results6" value="No" required>
+        <label for="no6">No</label>
+  </crowd-radio-group>
+  
+  <p>Response #7: ${results7}</p>
+  <crowd-radio-group>
+        <input type="radio" id="yes7" name="results7" value="Yes" required>
+        <label for="yes7">Yes</label>
+        <input type="radio" id="no7" name="results7" value="No" required>
+        <label for="no7">No</label>
+  </crowd-radio-group>
+  
+  <p>Response #8: ${results8}</p>
+  <crowd-radio-group>
+        <input type="radio" id="yes8" name="results8" value="Yes" required>
+        <label for="yes8">Yes</label>
+        <input type="radio" id="no8" name="results8" value="No" required>
+        <label for="no8">No</label>
+  </crowd-radio-group>
+  
+  <p>Response #9: ${results9}</p>
+  <crowd-radio-group>
+        <input type="radio" id="yes9" name="results9" value="Yes" required>
+        <label for="yes9">Yes</label>
+        <input type="radio" id="no9" name="results9" value="No" required>
+        <label for="no9">No</label>
+  </crowd-radio-group>
+  
+  <p>Response #10: ${results10}</p>
+  <crowd-radio-group>
+        <input type="radio" id="yes10" name="results10" value="Yes" required>
+        <label for="yes10">Yes</label>
+        <input type="radio" id="no10" name="results10" value="No" required>
+        <label for="no10">No</label>
+  </crowd-radio-group>
+  
+  <p>Response #11: ${results11}</p>
+  <crowd-radio-group>
+        <input type="radio" id="yes11" name="results11" value="Yes" required>
+        <label for="yes11">Yes</label>
+        <input type="radio" id="no11" name="results11" value="No" required>
+        <label for="no11">No</label>
+  </crowd-radio-group>
+  
+  <p>Response #12: ${results12}</p>
+  <crowd-radio-group>
+        <input type="radio" id="yes12" name="results12" value="Yes" required>
+        <label for="yes12">Yes</label>
+        <input type="radio" id="no12" name="results12" value="No" required>
+        <label for="no12">No</label>
+  </crowd-radio-group>
+  
+  <p>Response #13: ${results13}</p>
+  <crowd-radio-group>
+        <input type="radio" id="yes13" name="results13" value="Yes" required>
+        <label for="yes13">Yes</label>
+        <input type="radio" id="no13" name="results13" value="No" required>
+        <label for="no13">No</label>
+  </crowd-radio-group>
+  
+  <p>Response #14: ${results14}</p>
+  <crowd-radio-group>
+        <input type="radio" id="yes14" name="results14" value="Yes" required>
+        <label for="yes14">Yes</label>
+        <input type="radio" id="no14" name="results14" value="No" required>
+        <label for="no14">No</label>
+  </crowd-radio-group>
+  <!-- Use the short-instructions section for quick instructions that the Worker
+              will see while working on the task. Including some basic examples of 
+              good and bad answers here can help get good results. You can include 
+              any HTML here. -->
+  <!-- <short-instructions> -->
+
+  <!-- Use the full-instructions section for more detailed instructions that the 
+            Worker can open while working on the task. Including more detailed 
+            instructions and additional examples of good and bad answers here can
+            help get good results. You can include any HTML here. -->
+</div>
+</crowd-form>
