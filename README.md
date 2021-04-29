@@ -53,12 +53,12 @@ With regard to difficulty, we believe this component is a **4 out of 4**.
 ----
 
 ## Raw Data
-A survey was posted on the NETS213 Piazza to collect common university student stressors. The 10 most common responses were cleaned and formatted into the file `data/stressors.csv`. There are two columns: `stressor_1` and `stressor_2` which reflect the two problems displayed on one HIT (each task will require workers to provide advice for two different problems). 100 total responses (10 per stressor) were collected from workers and are in the file `data/stressor_responses.csv`.
+A survey was posted on the NETS213 Piazza to collect common university student stressors. The 10 most common responses were cleaned and formatted into the file `data/stressors.csv`. There are two columns: `stressor_1` and `stressor_2` which reflect the two problems displayed on one HIT (each task will require workers to provide advice for two different problems). 100 total responses (10 per stressor) were collected from workers and are in the file `data/stressor_responses_1.csv`.
 
 ----
 
 ## Quality Control
-In order to check answers validated in Step 4, we will use an **EM algorithm** to label each stressor-response pair. Sample inputs to the EM algorithm can be found in `data/sample_data`. Our sample datasets are `sample_stressor1_response_qualcheck` and `sample_stressor2_response_qualcheck`. This is a cleaned-up version of the CSV's we expect to extract from the HITs. They have columns: `'workerid'`, `'response'`, `'label'`. The final labeled pairs we expect to output from the EM algorithm will have two columns: `'response'` and `'label'`. The labels gathered from workers will either by a `yes [1]` or `no [0]`. We have a total of ten different stressors. Each stressor will have it's own *independent input and output CSV* containing their respective responses and worker labels. In short, we will run the EM algorithm 10 times, one per stressor.
+In order to check answers validated in Step 4, we will use an **EM algorithm** to label each stressor-response pair. Sample inputs to the EM algorithm can be found in `data/quality_control`. Our sample datasets are `qc_input1` and `qc_input2`. This is a cleaned-up version of the CSV's we expect to extract from the HITs. They have columns: `'workerid'`, `'response'`, `'label'`. The final labeled pairs we expect to output from the EM algorithm will have two columns: `'response'` and `'label'`. The labels gathered from workers will either by a `yes [1]` or `no [0]`. We have a total of ten different stressors. Each stressor will have it's own *independent input and output CSV* containing their respective responses and worker labels. In short, we will run the EM algorithm 10 times, one per stressor.
 
 Our **EM Algorithm** reads a CSV of responses, and outputs another CSV of results. The columns of each I/O dataset is outlined above. To ensure convergence, our algorithm goes through one-thousand interations. For each iteration, we monitor `worker confusion matrices` and `weighted response labels` and update these two after each iteration of the algorithm. The first step of the algorithm is to take a weighted majority vote based on worker response and the confusion matrices. We then update the finalized labels for each response, and then adjust the confusion matrices based on the weighted majority. The algorithm goes through one-thousand loops of these iterations, and then finally returns the outputted CSV file.
 
@@ -69,14 +69,32 @@ To choose the best responses that we filtered in the previous step, we asked mul
 
 ----
 
+## Guide On How To Complete The Validation HIT
+We prepared a video that explains how to complete the validation HIT. You can find it [here](https://vimeo.com/541439387?fbclid=IwAR36QGOtnl9Tewa9etmJl1Zt2hh_3r2jbYO3U04osz76jM-tDewDk6ZvC1I). In this HIT, we ask you to answer if you would feel comfortable giving the advice provided to your family members or friends. If you think it is a good, thoughtful response that contains resources and words of encouragment you would answer Yes, otherwise you would answer No. You will be answering Yes or No to 14 advice responses that are responses to a single stressor college students experience. You can respond Yes or No to as many of them as you want. 
+
+For example, if the stressor is: "I am worried about not finding a job or internship for next summer.".
+
+One of the responses for thi stresssor could be "Finding a job or internship is very complex thing. It depends upon many external factors and mainly on the economic condition of the country. So, don't worry about the job, the important thing is to learn the skills required for getting a job. Just keep applying to the companies and take an effort on improving your skills. Definitely, you will get a nice job." if you think this is a good response you would answer yes. We think it is a good response because it consists of words of encouragment as well as advice on what the person should do. 
+
+Another response could be "don't be in a hurry, all in your time, i will help you". In this case, we think the answer should be No. This response even though it consists some sort of words of encouragement, it is not specific enough, as well as it cannot be generalized to everyone who struggles with the problem presented.
+
+----
+
 ## Directory
 - `docs/flow_chart.png`: flow diagram of major system components
 - `docs/mockups`: mockups of user-facing interfaces
 - `data/stressors.csv`: student stressors collected from survey
 - `data/stressor_responses1.csv`: responses to stressors collected through MTurk
 - `data/quality_control`: sample quality control I/O datasets
-- `data/Fake Data 2 - Sheet1.csv` : sample data for rating the responses
-- `data/average_ratings.csv` : csv file we got after running averaging script
+- `data/aggregation`: sample aggregation module
+  - `data/aggregation/Fake Data 2 - Sheet1.csv` : sample data for rating the responses
+  - `data/aggregation/average_ratings.csv` : csv file we got after running averaging script
 - `layouts`: HTML layouts for MTurk HIT's
 - `src/quality_control`: EM algorithm script
 - `src/average_ratings.py` : script for calculating average among the responses 
+
+----
+
+## Goal of Analysis
+
+We plan to analyze the best stressor-response matches with crowdsourced responses for common stressors. The goal of this analysis is the identification of adequate and helpful ways to deal with stress and respond to stressors without requiring the assitance of mental healthcare professionals- a goal more important than before due to global issues such as the COVID-19 pandemic. We aggregate the responses to each stressor and then ask MTurk workers to first differentiate between appropriate and inappropriate matches, then ask another group of workers to rank each response for a stressor. Through this process and quality control, we find the best actions the crowd believes a person should take in the face of certain problems.
