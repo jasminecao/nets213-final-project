@@ -1,0 +1,62 @@
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+<h1>Rate Responses to Stressors</h1>
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+  <ul>
+    <li>
+      Please rate the quality of the response on a scale of 1 to 10, where 1
+      represents a poor response and 10 represents a great response. A good
+      response should be positive, helpful, and encouraging.
+    </li>
+    <li><strong>Stressor</strong> (Problem Statement): ${Stressor1}</li>
+    <li><strong>Response:</strong> ${Response1}</li>
+  </ul>
+  <crowd-slider
+    name="rating_1"
+    min="1"
+    max="10"
+    step="1"
+    pin="true"
+    required
+  ></crowd-slider>
+
+  <ul>
+    <li>
+      Please rate the quality of the response on a scale of 1 to 10, where 1
+      represents a poor response and 10 represents a great response. A good
+      response should be positive, helpful, and encouraging.
+    </li>
+    <li><strong>Stressor</strong> (Problem Statement): ${Stressor2}</li>
+    <li><strong>Response:</strong> ${Response2}</li>
+  </ul>
+  <crowd-slider
+    name="rating_2"
+    min="1"
+    max="10"
+    step="1"
+    pin="true"
+    required
+  ></crowd-slider>
+
+  <ul>
+    <li>
+      Please rate the quality of the response on a scale of 1 to 10, where 1
+      represents a poor response and 10 represents a great response. A good
+      response should be positive, helpful, and encouraging.
+    </li>
+    <li><strong>Stressor</strong> (Problem Statement): ${Stressor3}</li>
+    <li><strong>Response:</strong> ${Response3}</li>
+  </ul>
+  <crowd-slider
+    name="rating_3"
+    min="1"
+    max="10"
+    step="1"
+    pin="true"
+    required
+  ></crowd-slider>
+</crowd-form>
