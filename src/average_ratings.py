@@ -12,10 +12,11 @@ import pandas as pd
 #input: a csv file containing the input ratings
 #returns a dataframe containing the average ratings for each response
 def average_ratings(ratings):
-  df = pd.read_csv('Fake-Data-2-Sheet1.csv')
-  avg = df[['QuestionToBeRated1','Response1','R1Rated']].rename(columns={'QuestionToBeRated1': 'Question', 'Response1': 'Response', 'R1Rated':'rating'})
-  for i in range(2,6):
-    avg = avg.append(df[['QuestionToBeRated' + str(i),'Response' + str(i),'R' + str(i) + 'Rated']].rename(columns={'QuestionToBeRated' + str(i): 'Question', 'Response'  + str(i): 'Response', 'R' + str(i) + 'Rated':'rating'}))
-  avg = avg.groupby(by=['Question','Response']).mean()
+  df = pd.read_csv(ratings)
+  avg = df[['Input.Stressor1','Input.Response1','Answer.rating_1']].rename(columns={'Input.Stressor1': 'Stressor', 'Input.Response1': 'Response', 'Answer.rating_1':'rating'})
+  for i in range(2,4):
+    avg = avg.append(df[['Input.Stressor' + str(i),'Input.Response' + str(i),'Answer.rating_' + str(i)]].rename(columns={'Input.Stressor' + str(i): 'Stressor', 'Input.Response'  + str(i): 'Response', 'Answer.rating_' + str(i) :'rating'}))
+  avg = avg.groupby(by=['Stressor','Response']).mean()
   return avg
-average_ratings('Fake-Data-2-Sheet1.csv')
+d = average_ratings('/rating_hit_results.csv')
+d.to_csv('average_ratings.csv')
